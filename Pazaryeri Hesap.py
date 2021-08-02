@@ -94,11 +94,11 @@ else:
 
             k_o = float((satis_fiyati * komisyon_orani) / 100)
 
-            if satis_fiyati <= 49.99:
+            if satis_fiyati <= 29.99:
                 kargo_ucreti1 = 6
                 print("Kazancınız", satis_fiyati - alis_fiyati - k_o - kargo_ucreti1, "TL")
 
-            elif satis_fiyati >= 50:
+            elif satis_fiyati >= 30:
                 kargo_ucreti2 = 11.50
                 print("Kazancınız", satis_fiyati - alis_fiyati - k_o - kargo_ucreti2, "TL")
 
