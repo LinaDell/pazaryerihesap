@@ -1,4 +1,7 @@
-platform = int(input("1.Trendyol\n2.Çiçek Sepeti\n3.HepsiBurada\nPlatform Seçiniz: "))
+import requests
+from bs4 import BeautifulSoup
+import pyperclip
+platform = int(input("1.Trendyol\n2.Çiçek Sepeti\n3.HepsiBurada\n4.Barkod Bul\nPlatform Seçiniz: "))
 
 if platform == 1:
     def trendyol():
@@ -77,7 +80,7 @@ elif platform == 2:
     ciceksepeti()
     print()
 
-else:
+elif platform == 3:
     def hepsiburada():
         print("Hepsiburada")
         while True:
@@ -104,4 +107,37 @@ else:
 
 
     hepsiburada()
-    print()
+else:
+    def Barkod():
+        print("Barkod Bulma")
+
+
+        while True:
+            def convertTuple(tup):
+
+                str = ''
+                for item in tup:
+                    str = str + item
+                return str
+
+
+            r = requests.get(input("Ürün Linki: "))
+            soup = BeautifulSoup(r.text, 'html.parser')
+            s = soup.find('script', type='application/javascript').string
+
+            keyword = "barcode"
+            before_keyword, keyword, after_keyword = s.partition(keyword)
+            k = after_keyword
+            keyword2 = ':"'
+            m = before_keyword2, keyword2, after_keyword2 = k.partition(keyword2)
+
+            str = convertTuple(m)
+            keyword3 = '","'
+            n = before_keyword3, keyword3, after_keyword3 = str.partition(keyword3)
+            mytext = before_keyword3[3:]
+            pyperclip.copy(mytext)
+
+            print(mytext)
+    Barkod()
+
+print()
