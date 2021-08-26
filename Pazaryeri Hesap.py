@@ -107,6 +107,7 @@ elif platform == 3:
 
 
     hepsiburada()
+    print()
 else:
     def Barkod():
         print("Barkod Bulma")
