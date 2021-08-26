@@ -109,6 +109,7 @@ elif platform == 3:
     hepsiburada()
     print()
 else:
+    # Trendyol'da ürünün barkodunu bulur.
     def Barkod():
         print("Barkod Bulma")
 
